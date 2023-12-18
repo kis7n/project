@@ -1,4 +1,4 @@
-def task1()
+def task1():
 #ex1
 n = int(input("Введите целое число: "))
     if n < 0:
@@ -20,7 +20,7 @@ def binomial_coefficient(n, k):
 
 print_pascal_triangle(n)
 
-def task2()
+def task2():
 #ex2
 def longest_palindrome(s):
     longest = ""
@@ -38,7 +38,7 @@ if result:
 else:
     print("В строке нет палиндромных подстрок.")                                        #учитываем,что полиндрома может и не быть вовсе
 
-def task3()
+def task3():
 #ex3
 n, m, k, h = map(int, input().split())
 
