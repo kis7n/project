@@ -4,20 +4,20 @@ def task1():
             if n < 0:
                 print("Ошибка: введите число больше или равное нулю")
                 return
-        for line in range(n):
-            for i in range(line + 1):
-                print(binomial_coefficient(line, i), " ", end="")
-            print()
-    
+            for line in range(n):
+                for i in range(line + 1):
+                    print(binomial_coefficient(line, i), " ", end="")
+                print()
+        
         def factorial(n):
             if n == 0:
                 return 1
             else:
                 return n * factorial(n-1)
-    
+        
         def binomial_coefficient(n, k):
             return int(factorial(n) / (factorial(k) * factorial(n - k)))
-    
+        
         n = int(input("Введите целое число: "))
         print_pascal_triangle(n)
 
