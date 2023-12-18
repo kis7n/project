@@ -72,6 +72,60 @@ def task3():
     for row in result:
         print(*row)
 
+def task4():
+    row1 = int(input("введите количество строк первой матрицы: "))
+    col1 = int(input("введите количество столбцов первой матрицы: "))
+    row2 = int(input("введите количество строк второй матрицы: "))
+    col2 = int(input("введите количество столбцов второй матрицы: "))
+    if col1 != row2:
+        print("умножение невозможно!")
+        exit()
+
+# ввод элементов первой матрицы
+    a = [[0] * col1 for _ in range(row1)]
+    print("введите элементы первой матрицы")
+    for i in range(row1):
+        for j in range(col1):
+            print(f"a[{i}][{j}]= ", end='')
+            a[i][j] = float(input())
+
+# вывод элементов первой матрицы
+    for i in range(row1):
+        for j in range(col1):
+            print(a[i][j], end=' ')
+        print()
+
+
+# ввод элементов второй матрицы
+    b = [[0] * col2 for _ in range(row2)]
+    print("введите элементы второй матрицы")
+    for i in range(row2):
+        for j in range(col2):
+            print(f"b[{i}][{j}]= ", end='')
+            b[i][j] = float(input())
+
+# вывод элементов второй матрицы
+    for i in range(row2):
+        for j in range(col2):
+            print(b[i][j], end=' ')
+        print()
+
+# умножение матриц
+    c = [[0] * col2 for _ in range(row1)]
+    for i in range(row1):
+        for j in range(col2):
+            c[i][j] = 0
+        for k in range(col1):
+                c[i][j] += a[i][k] * b[k][j]
+
+# вывод матрицы произведения
+    print("матрица произведения")
+    for i in range(row1):
+        for j in range(col2):
+            print(c[i][j], end=' ')
+        print()
+
+
 n = int(input("введите номер задания, которое хотите проверить или 0, если хотите завершить проверку: "))
 while True:
     if n == 1:
@@ -82,6 +136,9 @@ while True:
         n = int(input("введите номер задания, которое хотите проверить или 0, если хотите завершить проверку: "))
     elif n == 3:
         task3()
+        n = int(input("введите номер задания, которое хотите проверить или 0, если хотите завершить проверку: "))
+    elif n == 4:
+        task4()
         n = int(input("введите номер задания, которое хотите проверить или 0, если хотите завершить проверку: "))
     elif n == 0:
         break
