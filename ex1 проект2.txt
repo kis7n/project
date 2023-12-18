@@ -1,0 +1,19 @@
+n = int(input("Введите целое число: "))
+    if n < 0:
+        print("Ошибка: введите число больше или равное нулю")
+        return
+    for line in range(n):
+        for i in range(line + 1):
+            print(binomial_coefficient(line, i), " ", end="")
+        print()
+
+else:
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial_coefficient(n, k):
+    return int(factorial(n) / (factorial(k) * factorial(n - k)))
+
+print_pascal_triangle(n)
