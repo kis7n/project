@@ -114,8 +114,7 @@ def task4():
     c = [[0] * col2 for _ in range(row1)]
     for i in range(row1):
         for j in range(col2):
-            c[i][j] = 0
-        for k in range(col1):
+            for k in range(col1):
                 c[i][j] += a[i][k] * b[k][j]
 
 # вывод матрицы произведения
